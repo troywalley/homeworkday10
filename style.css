@@ -1,0 +1,15 @@
+form{
+	background-color:white;
+	width:60%;
+}
+body{
+	background-color:black;
+}
+.prompt, .answer{
+	border:2px solid black;
+}
+.answer{
+	height:30px;
+	width:400px;
+	
+}

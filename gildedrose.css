@@ -1,0 +1,166 @@
+.video{
+	/*width:100%;*/
+	width:100%;
+	background-color:black;
+}
+.moveme{
+	margin-left:20px;
+}
+.slider-container{
+	background-color:lightgrey;
+	border:1px solid black;
+	width:20px;
+	height:100px;
+	/*position:absolute;*/
+	right:0px;
+	/*position:fixed;*/
+	float:right;
+	z-index:1;
+
+	
+}
+.slider{
+	background-color:grey;
+	border:1px solid black;
+	width:19px;
+	height:19px;
+	border-radius:50%;
+	display:inline-block;
+	
+}
+
+.setheight{
+	max-height:80px;
+}
+.video-container{
+	display:inline-block;
+	width:50%;
+	position:fixed;
+}
+.controller{
+	display:inline-block;
+	height:20px;
+	position:fixed;
+	/*width:100%;*/
+}
+.jukebox{
+	background-image:url("smoke.gif");
+	background-size:100% 100%;
+	height:100%;
+	background-color:white;
+	width:100%;
+	position:fixed;
+	top:0;
+}
+body{
+	margin:0 0 0 0;
+}
+.display-container{
+	display:flex;
+	justify-content:space-around;
+	flex-wrap:wrap;
+	height:58%;
+	margin-top: 12%;
+	
+}
+.display{
+	width:70%;
+	height:100%;
+	/*background-image:url("smoke.gif");
+	background-size:100% 100%;*/
+	/*border:2px solid black;*/
+}
+.button{
+	width:40px;
+	height:30px;
+	background-color:lightgrey;
+	border:2px solid black;
+}
+.scroll-left{
+	margin-top:5px;
+	width:300px;
+	height:30px;
+	border:2px solid black;
+	text-align:center;
+	overflow: hidden;
+	position:relative;
+	background-color:white;
+
+}
+#myfiles{
+	background-color:white;
+}
+.scroll-left p{
+	position:absolute;
+	width:100%;
+	height:100%;
+	margin-top:5px;
+	text-align:center;
+	transform:translateX(100%);
+	animation:scroll-left 15s linear infinite;
+
+	
+}
+
+.filescontainer{
+	display:flex;
+	justify-content: space-around;
+	flex-wrap:wrap;
+}
+
+.songname-container{
+	display:flex;
+	justify-content: space-around;
+	flex-wrap:wrap;
+
+}
+.controls{
+	display:inline-block;
+}
+.controls-container-container{
+	display:flex;
+	justify-content: space-around;
+	flex-wrap:wrap;
+}
+.musiclist{
+	display:flex;
+	justify-content:space-between;
+	flex-wrap:wrap;
+}
+.songlist, .playlist{
+	width:250px;
+	height:300px;
+	border:2px solid black;
+	background-color:white;
+	overflow:auto;
+	
+	
+}
+.allmysongs{
+	border-top:1px solid lightgrey;
+
+}
+.allmysongs:hover{
+	background-color:lightgrey;
+}
+.songlistheader, .playlistheader{
+	/*background-image:url("Atlas.jpg");
+	background-size:100% 100%;*/
+	text-align:center;
+	/*border-bottom:1px solid black;*/
+	text-decoration:underline;
+}
+.songlist{
+	margin-left:10px;
+}
+.playlist{
+	margin-right:10px;
+}
+@keyframes scroll-left{
+	0%{
+		transform:translateX(100%)}
+	100%{
+		transform:translateX(-100%);
+	}
+	}
+}
