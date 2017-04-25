@@ -221,6 +221,8 @@ function makeResume(){
 	pause.removeEventListener("click", makeResume)
 	pause.onclick=Jukebox.resume()
 }
+var contentDivs=$("div")
+console.log(contentDivs)
 makeResume();
 // function RickRoll(){
 // 	for(var i =0; i<100; i++){

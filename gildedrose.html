@@ -40,7 +40,7 @@
 				<div class="playlistheader">Playlist</div>
 			</div>
 		</div>
-		<video src="https://www.youtube.com/watch?v=Ic02W1bWeFU&html5=True" controls></video>
+		
 	</div>
 
 </div>
@@ -52,9 +52,24 @@
 
 </div>
 
+<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+<script>SC.initialize({
+  client_id: 'Troy_Walley',
+  redirect_uri: 'http://example.com/callback'
+});
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+// initiate auth popup
+SC.connect().then(function() {
+  return SC.get('/me');
+}).then(function(me) {
+  alert('Hello, ' + me.username);
+});
 </script>
+
+<script
+ src="https://code.jquery.com/jquery-3.2.1.min.js"
+ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+ crossorigin="anonymous"></script>
 <script type="text/javascript" src="gildedrose.js"></script>
 </body>
 </html>
