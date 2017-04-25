@@ -87,22 +87,22 @@ var item6=new StoreItem("Sulfuras",50, 50, false)
 //******************************
 //Jukebox
 //******************************
+var Jukebox=new Jukebox([],[],ChangeVolume,Next,Previous,Stop,"",0,"",Play,Pause,Resume,[])
 
-
-var Jukebox={
-	tracks:[],
-	playlist:[],
-	volume: ChangeVolume,
-	next: Next,
-	previous: Previous,
-	stop: Stop,
-	status: "",
-	current: 0,
-	Audio:"",
-	play:Play,
-	pause:Pause,
-	resume: Resume,	
-	files:[]
+function Jukebox(tracks,playlist,volume,next,previous,stop,status,current,Audio,play,pause,resume,files){
+	this.tracks=tracks;
+	this.playlist=playlist;
+	this.volume=volume;
+	this.next=next;
+	this.previous=previous;
+	this.stop=stop;
+	this.status=status;
+	this.current=current;
+	this.Audio=Audio;
+	this.play=play;
+	this.pause=pause;
+	this.resume=resume;
+	this.files=files;
 }
 var pause=document.getElementById("pause")
 var previous=document.getElementsByClassName("previous")[0]
@@ -174,19 +174,24 @@ function addFiles(){
 	var files=filelist.files
 	Jukebox.files=files
 	for(var i=0; i<files.length;i++){
-		Jukebox.tracks.push(files[i].name)
+		
 		// Jukebox.playlist.push(files[i].name)
 		var elem=document.createElement("div")
 		tracks.appendChild(elem)
-		elem.innerHTML=files[i].name
+		var song=new SongCreator(files[i])
+		elem.innerHTML=song.file.name
 		elem.className="allmysongs"
 		elem.addEventListener("click", addToPlaylist)
+		Jukebox.tracks.push(song)
 	}
+}
+function SongCreator(file){
+	this.file=file;
 }
 function addToPlaylist(){
 	for(var i=0;i<Jukebox.tracks.length;i++){
-		if(event.target.innerHTML===Jukebox.tracks[i]){
-			Jukebox.playlist.push(Jukebox.tracks[i])
+		if(event.target.innerHTML===Jukebox.tracks[i].file.name){
+			Jukebox.playlist.push(Jukebox.tracks[i].file.name)
 			var playlistelement=document.createElement("div")
 			playlistelement.className="allmysongs"
 			playlist.appendChild(playlistelement)
@@ -217,7 +222,21 @@ function makeResume(){
 	pause.onclick=Jukebox.resume()
 }
 makeResume();
+// function RickRoll(){
+// 	for(var i =0; i<100; i++){
+// 		if(i%3===0 && i%5===0){
+// 			console.log("RickRoll");
+// 		}else if(i%3===0){
+// 			console.log("Rick");
+// 		}else if(i%5===0){
+// 			console.log("Roll");
+// 		}else{
+// 			console.log(i);
+// 		}
+// 	}
+// }
 
+// RickRoll() 
 // previous.addEventListener("click", function(){
 // 	Jukebox.previous();
 // })

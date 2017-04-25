@@ -1,3 +1,7 @@
+@font-face{
+ font-family:"digital-clock-font";
+ src: url('digital.ttf');
+}
 .video{
 	/*width:100%;*/
 	width:100%;
@@ -85,6 +89,7 @@ body{
 	overflow: hidden;
 	position:relative;
 	background-color:white;
+	font-family:"digital-clock-font";
 
 }
 #myfiles{
@@ -96,9 +101,10 @@ body{
 	height:100%;
 	margin-top:5px;
 	text-align:center;
+	font-family: "digital-clock-font";
 	transform:translateX(100%);
 	animation:scroll-left 15s linear infinite;
-
+	
 	
 }
 
@@ -158,9 +164,12 @@ body{
 }
 @keyframes scroll-left{
 	0%{
-		transform:translateX(100%)}
+		transform:translateX(100%);
+		font-family:"digital-clock-font";}
+		
 	100%{
 		transform:translateX(-100%);
+		font-family:"digital-clock-font";
 	}
 	}
 }
